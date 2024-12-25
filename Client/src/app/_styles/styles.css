@@ -1,13 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import "./variables.css";
-@import "./reset.css";
+@import "variables.css";
+@import "reset.css";
 
 @import "sanitize.css";
 @import "sanitize.css/forms.css";
 @import "sanitize.css/typography.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html {
 	font-size: 6.25%;
@@ -21,6 +21,7 @@ body {
 	font-size: 16em;
 	text-rendering: geometricPrecision;
 	min-width: 375rem;
+	background-color: var(--black);
 }
 
 .visually-hidden {
