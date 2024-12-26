@@ -5,6 +5,10 @@
 	@media (width >= 768px) {
 		padding: 0 30rem;
 	}
+
+	@media (width >= 1440px) {
+		padding: 0 165rem;
+	}
 }
 
 .footer__wrapper {
@@ -19,5 +23,9 @@
 		padding: 30rem 0 40rem 0;
 		flex-direction: row;
 		justify-content: space-between;
+	}
+
+	@media (width >= 1440px) {
+		padding: 47rem 0 92rem 0;
 	}
 }
