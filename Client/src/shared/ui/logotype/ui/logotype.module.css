@@ -1,0 +1,13 @@
+.logotype {
+	font-weight: 700;
+	font-size: 24rem;
+	line-height: 133%;
+	letter-spacing: -0.01em;
+	color: var(--white);
+	flex: 0 0 auto;
+
+	@media (width >= 768px) {
+		font-size: 32rem;
+		line-height: 100%;
+	}
+}
