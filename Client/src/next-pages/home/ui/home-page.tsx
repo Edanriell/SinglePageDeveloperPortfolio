@@ -1,5 +1,7 @@
 import { type FC } from "react";
 
+import { Hero } from "./sections/hero/ui";
+
 export const HomePage: FC = () => {
-	return <h1>Home Page</h1>;
+	return <Hero />;
 };
