@@ -1,0 +1,64 @@
+.social-links-list {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	column-gap: 25.6rem;
+	align-items: center;
+	flex: 0 0 auto;
+
+	@media (width >= 768px) {
+		column-gap: 32rem;
+	}
+}
+
+.social-links-list__item {
+	position: relative;
+}
+
+.social-links-list__link {
+	position: relative;
+}
+
+.social-links-list__icon {
+	position: relative;
+}
+
+.social-links-list__icon--type--github {
+	width: 20rem;
+	height: 20rem;
+
+	@media (width >= 768px) {
+		width: 25rem;
+		height: 24rem;
+	}
+}
+
+.social-links-list__icon--type--frontend-mentor {
+	width: 19rem;
+	height: 17rem;
+
+	@media (width >= 768px) {
+		width: 24rem;
+		height: 21rem;
+	}
+}
+
+.social-links-list__icon--type--linkedin {
+	width: 19rem;
+	height: 19rem;
+
+	@media (width >= 768px) {
+		width: 24rem;
+		height: 24rem;
+	}
+}
+
+.social-links-list__icon--type--twitter {
+	width: 19rem;
+	height: 16rem;
+
+	@media (width >= 768px) {
+		width: 24rem;
+		height: 20rem;
+	}
+}
