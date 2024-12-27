@@ -1,0 +1,262 @@
+.hero-section {
+	--header-height: -112rem;
+
+	position: relative;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	row-gap: 40rem;
+	margin: var(--header-height) 0 0 0;
+	padding: 0 16rem 80rem 16rem;
+	overflow: hidden;
+
+	@media (width >= 768px) {
+		--header-height: -90rem;
+
+		padding: 0 32rem 60rem 32rem;
+		align-items: flex-start;
+	}
+
+	@media (width >= 1440px) {
+		--header-height: -110rem;
+
+		padding: 0 165rem 219rem 165rem;
+		align-items: flex-start;
+	}
+}
+
+.hero-section__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 24rem;
+
+	@media (width >= 768px) {
+		row-gap: unset;
+		max-width: 58vw;
+		align-items: flex-start;
+		margin-top: 158rem;
+		z-index: 4;
+	}
+
+	@media (width >= 1440px) {
+		row-gap: unset;
+		max-width: 49.0277vw;
+		align-items: flex-start;
+		margin-top: 198rem;
+		z-index: 4;
+	}
+}
+
+.hero-section__title {
+	font-weight: 700;
+	font-size: 40rem;
+	line-height: 100%;
+	letter-spacing: -0.03em;
+	text-align: center;
+	color: var(--white);
+
+	:nth-child(2) {
+		@media (width >= 768px) {
+			margin-bottom: 11rem;
+		}
+
+		@media (width >= 1440px) {
+			margin-bottom: unset;
+		}
+	}
+
+	@media (width >= 768px) {
+		font-size: 72rem;
+		margin-bottom: 60rem;
+		text-align: left;
+	}
+
+	@media (width >= 1440px) {
+		font-size: 88rem;
+		margin-bottom: 43rem;
+	}
+}
+
+.hero-section__title-element {
+	@media (width >= 768px) {
+		display: block;
+	}
+
+	@media (width >= 1440px) {
+		display: unset;
+	}
+}
+
+.hero-section__title--type--highlighted {
+	position: relative;
+	font-weight: 700;
+	font-size: 40rem;
+	line-height: 100%;
+	letter-spacing: -0.03em;
+	text-align: center;
+	color: var(--white);
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 4rem;
+		background: var(--green);
+
+		@media (width >= 768px) {
+			height: 6rem;
+		}
+	}
+
+	@media (width >= 768px) {
+		font-size: 72rem;
+	}
+
+	@media (width >= 1440px) {
+		font-size: 88rem;
+	}
+}
+
+.hero-section__text {
+	font-weight: 500;
+	font-size: 16rem;
+	line-height: 162%;
+	text-align: center;
+	color: var(--grey);
+
+	@media (width >= 768px) {
+		font-size: 18rem;
+		line-height: 156%;
+		margin-bottom: 34rem;
+		text-align: left;
+	}
+
+	@media (width >= 1440px) {
+		margin-bottom: 66rem;
+		max-width: 30.9027vw;
+	}
+}
+
+.hero-section__developer-image {
+	position: relative;
+}
+
+.hero-section__circle-image {
+	position: absolute;
+	top: 254rem;
+	right: calc(-129rem / 2 - 16rem);
+	width: 129rem;
+	height: 129rem;
+	max-width: unset;
+
+	@media (width >= 768px) {
+		z-index: 5;
+		top: 471rem;
+		right: calc(-129rem / 2);
+	}
+
+	@media (width >= 1440px) {
+		z-index: 5;
+		top: 481rem;
+		right: 545rem;
+	}
+}
+
+.hero-section__circles-image {
+	position: absolute;
+	top: 124rem;
+	left: -343rem;
+	width: 530rem;
+	height: 129rem;
+	z-index: 2;
+	max-width: unset;
+
+	@media (width >= 768px) {
+		top: 86rem;
+		left: calc(-530rem / 2);
+	}
+
+	@media (width >= 1440px) {
+		top: 133rem;
+		left: -100rem;
+	}
+}
+
+.developer-image {
+	width: 174rem;
+	height: 383rem;
+	background: linear-gradient(180deg, rgba(36, 36, 36, 0) 0%, #242424 100%);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	z-index: 3;
+
+	@media (width >= 768px) {
+		width: 322rem;
+		height: 600rem;
+		background: var(--dark-grey);
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	@media (width >= 1440px) {
+		width: 445rem;
+		height: 720rem;
+		top: 0;
+		right: 165rem;
+	}
+}
+
+.developer-image__image {
+	width: 174rem;
+	height: 242rem;
+	filter: grayscale(100%);
+	object-fit: cover;
+
+	@media (width >= 768px) {
+		width: 349rem;
+		height: 486rem;
+	}
+
+	@media (width >= 1440px) {
+		width: 444rem;
+		height: 618rem;
+	}
+}
+
+.developer-image__image-description {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.link {
+	position: relative;
+	font-weight: 700;
+	font-size: 16rem;
+	line-height: 162%;
+	letter-spacing: 0.14em;
+	color: var(--white);
+	text-transform: uppercase;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: -10rem;
+		left: 0;
+		width: 100%;
+		height: 2rem;
+		background: var(--green);
+	}
+}
