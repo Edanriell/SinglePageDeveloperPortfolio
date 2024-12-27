@@ -12,10 +12,8 @@ export const Hero: FC = () => {
 		<section className={styles["hero-section"]}>
 			<div className={styles["hero-section__content"]}>
 				<h1 className={styles["hero-section__title"]}>
-					<span className={styles["hero-section__title-element"]}>Nice to</span>
-					<span className={styles["hero-section__title-element"]}>
-						meet you! I’m
-					</span>{" "}
+					<span className={styles["hero-section__title-element"]}>Nice to</span>{" "}
+					<span className={styles["hero-section__title-element"]}>meet you! I’m</span>{" "}
 					<strong className={styles["hero-section__title--type--highlighted"]}>
 						Adam Keyes
 					</strong>
