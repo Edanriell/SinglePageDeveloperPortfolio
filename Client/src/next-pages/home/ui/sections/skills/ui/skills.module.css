@@ -1,0 +1,37 @@
+.skills-section {
+	position: relative;
+}
+
+.skills-section__content {
+	position: relative;
+}
+
+.skills-section__circles-image {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.skills-section__skills-and-experience-list {
+
+}
+
+.skills-and-experience-list {
+
+}
+
+.skills-and-experience-list__item {
+
+}
+
+.skills-and-experience-list__skill {
+
+}
+
+.skills-and-experience-list__skill--style--uppercased {
+	text-transform: uppercase;
+}
+
+.skills-and-experience-list__experience {
+
+}
