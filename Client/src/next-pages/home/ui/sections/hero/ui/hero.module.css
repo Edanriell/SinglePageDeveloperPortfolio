@@ -9,6 +9,13 @@
 	margin: var(--header-height) 0 0 0;
 	padding: 0 16rem 80rem 16rem;
 	overflow: hidden;
+
+	@media (width >= 768px) {
+		--header-height: -90rem;
+
+		padding: 0 32rem 60rem 32rem;
+		align-items: flex-start;
+	}
 }
 
 .hero-section__content {
@@ -16,6 +23,14 @@
 	flex-direction: column;
 	align-items: center;
 	row-gap: 24rem;
+
+	@media (width >= 768px) {
+		row-gap: unset;
+		max-width: 445rem;
+		align-items: flex-start;
+		margin-top: 158rem;
+		z-index: 4;
+	}
 }
 
 .hero-section__title {
@@ -25,6 +40,24 @@
 	letter-spacing: -0.03em;
 	text-align: center;
 	color: var(--white);
+
+	@media (width >= 768px) {
+		font-size: 72rem;
+		margin-bottom: 60rem;
+		text-align: left;
+	}
+
+	:nth-child(2) {
+		@media (width >= 768px) {
+			margin-bottom: 11rem;
+		}
+	}
+}
+
+.hero-section__title-element {
+	@media (width >= 768px) {
+		display: block;
+	}
 }
 
 .hero-section__title--type--highlighted {
@@ -44,6 +77,14 @@
 		width: 100%;
 		height: 4rem;
 		background: var(--green);
+
+		@media (width >= 768px) {
+			height: 6rem;
+		}
+	}
+
+	@media (width >= 768px) {
+		font-size: 72rem;
 	}
 }
 
@@ -53,6 +94,13 @@
 	line-height: 162%;
 	text-align: center;
 	color: var(--grey);
+
+	@media (width >= 768px) {
+		font-size: 18rem;
+		line-height: 156%;
+		margin-bottom: 34rem;
+		text-align: left;
+	}
 }
 
 .hero-section__developer-image {
@@ -66,6 +114,12 @@
 	width: 129rem;
 	height: 129rem;
 	max-width: unset;
+
+	@media (width >= 768px) {
+		z-index: 5;
+		top: 471rem;
+		right: calc(-129rem / 2);
+	}
 }
 
 .hero-section__circles-image {
@@ -76,6 +130,11 @@
 	height: 129rem;
 	z-index: 2;
 	max-width: unset;
+
+	@media (width >= 768px) {
+		top: 86rem;
+		left: calc(-530rem / 2);
+	}
 }
 
 .developer-image {
@@ -86,12 +145,22 @@
 	flex-direction: column;
 	justify-content: flex-end;
 	z-index: 3;
+
+	@media (width >= 768px) {
+		width: 322rem;
+		height: 600rem;
+		background: var(--dark-grey);
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
 }
 
 .developer-image__image {
 	width: 174rem;
 	height: 242rem;
 	filter: grayscale(100%);
+	object-fit: cover;
 
 	@media (width >= 768px) {
 		width: 349rem;
