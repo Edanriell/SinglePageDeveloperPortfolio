@@ -20,7 +20,7 @@ body {
 	position: relative;
 	font-size: 16em;
 	text-rendering: geometricPrecision;
-	min-width: 375rem;
+	min-width: 359rem;
 	background-color: var(--black);
 }
 
