@@ -6,6 +6,10 @@
 	@media (width >= 768) {
 		padding: 0 32rem 50rem 32rem;
 	}
+
+	@media (width >= 1440px) {
+		padding: 0 165rem 70rem 165rem;
+	}
 }
 
 .skills-section__content {
@@ -19,6 +23,10 @@
 		border-bottom: unset;
 		padding: 52rem 0 50rem 0;
 	}
+
+	@media (width >= 1440px) {
+		padding: 72rem 0 70rem 0;
+	}
 }
 
 .skills-section__circles-image {
@@ -31,6 +39,11 @@
 	@media (width >= 768px) {
 		top: 387rem;
 		right: -332rem;
+	}
+
+	@media (width >= 1440px) {
+		top: 253rem;
+		right: -239rem;
 	}
 }
 
@@ -52,6 +65,13 @@
 		justify-content: flex-start;
 		max-width: 708rem;
 	}
+
+	@media (width >= 1440px) {
+		row-gap: 58rem;
+		column-gap: 35rem;
+		justify-content: flex-start;
+		max-width: unset;
+	}
 }
 
 .skills-and-experience-list__item {
@@ -64,6 +84,10 @@
 		flex: 0 0 clamp(329rem, 44.0051vw, 345rem);
 		row-gap: 14rem;
 		align-items: flex-start;
+	}
+
+	@media (width >= 1440px) {
+		flex: 0 0 clamp(340rem, 23.69vw, 345rem);
 	}
 }
 
