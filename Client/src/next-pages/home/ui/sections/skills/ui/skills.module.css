@@ -1,31 +1,50 @@
 .skills-section {
 	position: relative;
+	padding: 0 16rem 80rem 16rem;
+	overflow: hidden;
 }
 
 .skills-section__content {
 	position: relative;
+	padding: 40rem 0;
+	border-top: 1rem solid var(--white);
+	border-bottom: 1rem solid var(--white);
+	z-index: 2;
 }
 
 .skills-section__circles-image {
 	position: absolute;
-	bottom: 0;
-	right: 0;
+	top: 540rem;
+	right: -350rem;
+	max-width: unset;
+	z-index: 1;
 }
 
 .skills-section__skills-and-experience-list {
-
+	position: relative;
 }
 
 .skills-and-experience-list {
-
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 24rem;
 }
 
 .skills-and-experience-list__item {
-
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 1rem;
 }
 
 .skills-and-experience-list__skill {
-
+	font-weight: 700;
+	font-size: 32rem;
+	line-height: 125%;
+	letter-spacing: -0.03em;
+	text-align: center;
+	color: var(--white);
 }
 
 .skills-and-experience-list__skill--style--uppercased {
@@ -33,5 +52,9 @@
 }
 
 .skills-and-experience-list__experience {
-
+	font-weight: 500;
+	font-size: 16rem;
+	line-height: 162%;
+	text-align: center;
+	color: var(--grey);
 }
