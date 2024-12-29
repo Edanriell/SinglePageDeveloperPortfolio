@@ -1,49 +1,111 @@
 .section-contact {
-
+	position: relative;
+	background: var(--dark-grey);
+	padding: 60rem 16rem 87rem 16rem;
+	overflow: hidden;
 }
 
 .section-contact__content {
-
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 20rem;
 }
 
 .section-contact__title {
-
+	font-weight: 700;
+	font-size: 40rem;
+	line-height: 100%;
+	letter-spacing: -0.03em;
+	text-align: center;
+	color: var(--white);
 }
 
 .section-contact__text {
+	font-weight: 500;
+	font-size: 16rem;
+	line-height: 162%;
+	text-align: center;
+	color: var(--grey);
+	min-width: 343rem;
+}
 
+.section-contact__circles-image {
+	position: absolute;
+	bottom: 97rem;
+	left: -343rem;
+	width: 530rem;
+	height: 129rem;
+	z-index: 2;
+	max-width: unset;
 }
 
 .section-contact__form {
-
+	position: relative;
+	margin-top: 50rem;
+	z-index: 3;
 }
 
 .form {
-
+	display: flex;
+	flex-direction: column;
+	row-gap: 32rem;
 }
 
 .input-field {
-
-}
-
-.input-label {
-
+	position: relative;
 }
 
 .input {
+	font-weight: 500;
+	font-size: 16rem;
+	line-height: 162%;
+	letter-spacing: -0.01em;
+	color: var(--white);
+	text-transform: uppercase;
+	padding: 0 24rem 16rem 24rem;
+	border-bottom: 1rem solid var(--white);
+	width: 100%;
 
+	&::placeholder {
+		font-weight: 500;
+		font-size: 16rem;
+		line-height: 162%;
+		letter-spacing: -0.01em;
+		color: rgba(255, 255, 255, 0.5);
+		text-transform: uppercase;
+	}
 }
 
 .input--type--text {
-
+	position: relative;
 }
 
 .input--type--email {
-
+	position: relative;
 }
 
 .textarea {
+	font-weight: 500;
+	font-size: 16rem;
+	line-height: 162%;
+	letter-spacing: -0.01em;
+	color: var(--white);
+	text-transform: uppercase;
+	resize: none;
+	padding: 0 24rem 81rem 24rem;
+	border-bottom: 1rem solid var(--white);
+	width: 100%;
 
+
+	&::placeholder {
+		font-weight: 500;
+		font-size: 16rem;
+		line-height: 162%;
+		letter-spacing: -0.01em;
+		color: rgba(255, 255, 255, 0.5);
+		text-transform: uppercase;
+	}
 }
 
 .button {
@@ -57,6 +119,7 @@
 	display: flex;
 	flex-direction: column-reverse;
 	row-gap: 10rem;
+	align-self: flex-end;
 
 	&::before {
 		content: '';

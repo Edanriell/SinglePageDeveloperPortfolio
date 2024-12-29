@@ -1,6 +1,9 @@
 import { type FC } from "react";
 
 import styles from "./contact.module.css";
+import Image from "next/image";
+
+import circlesImage from "@public/images/vector/circles.svg";
 
 export const Contact: FC = () => {
 	return (
@@ -12,37 +15,53 @@ export const Contact: FC = () => {
 					form, and I’ll get back to you as soon as possible.
 				</p>
 			</div>
-			<form className={styles["section-contact__form"]}>
+			<form className={styles["section-contact__form"] + " " + styles["form"]}>
 				<div className={styles["input-field"]}>
-					<label className={styles["input-label"]} htmlFor="name">
-						Name
+					<label className="visually-hidden" htmlFor="name">
+						Full name
 					</label>
 					<input
 						className={styles["input"] + " " + styles["input--type--text"]}
 						name="name"
 						type="text"
 						placeholder="Name"
+						id="name"
 					/>
 				</div>
 				<div className={styles["input-field"]}>
-					<label className={styles["input-label"]} htmlFor="email">
-						Email
+					<label className="visually-hidden" htmlFor="email">
+						Email address
 					</label>
 					<input
 						className={styles["input"] + " " + styles["input--type--email"]}
 						name="email"
 						type="email"
 						placeholder="Email"
+						id="email"
 					/>
 				</div>
 				<div className={styles["input-field"]}>
-					<label className={styles["input-label"]} htmlFor="message">
+					<label className="visually-hidden" htmlFor="message">
 						Message
 					</label>
-					<textarea name="message" placeholder="Message" />
+					<textarea
+						id="message"
+						name="message"
+						className={styles["textarea"]}
+						placeholder="Message"
+					/>
 				</div>
-				<button type="submit">Send message</button>
+				<button className={styles["button"]} type="submit">
+					Send message
+				</button>
 			</form>
+			<Image
+				className={styles["section-contact__circles-image"]}
+				src={circlesImage}
+				width={530}
+				height={129}
+				alt=""
+			/>
 		</section>
 	);
 };
