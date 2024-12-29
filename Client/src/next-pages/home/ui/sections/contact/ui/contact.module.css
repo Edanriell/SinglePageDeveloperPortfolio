@@ -3,6 +3,14 @@
 	background: var(--dark-grey);
 	padding: 60rem 16rem 87rem 16rem;
 	overflow: hidden;
+
+	@media (width >= 768px) {
+		padding: 60rem 32rem 92rem 32rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 48rem;
+	}
 }
 
 .section-contact__content {
@@ -10,6 +18,11 @@
 	flex-direction: column;
 	align-items: center;
 	row-gap: 20rem;
+
+	@media (width >= 768px) {
+		max-width: 445rem;
+		width: 100%;
+	}
 }
 
 .section-contact__title {
@@ -19,6 +32,10 @@
 	letter-spacing: -0.03em;
 	text-align: center;
 	color: var(--white);
+
+	@media (width >= 768px) {
+		font-size: 72rem;
+	}
 }
 
 .section-contact__text {
@@ -28,6 +45,12 @@
 	text-align: center;
 	color: var(--grey);
 	min-width: 343rem;
+
+	@media (width >= 768px) {
+		font-size: 18rem;
+		line-height: 156%;
+		min-width: unset;
+	}
 }
 
 .section-contact__circles-image {
@@ -38,12 +61,23 @@
 	height: 129rem;
 	z-index: 2;
 	max-width: unset;
+
+	@media (width >= 768px) {
+		bottom: 27rem;
+		left: -368rem;
+	}
 }
 
 .section-contact__form {
 	position: relative;
 	margin-top: 50rem;
 	z-index: 3;
+
+	@media (width >= 768px) {
+		margin-top: unset;
+		max-width: 445rem;
+		width: 100%;
+	}
 }
 
 .form {
