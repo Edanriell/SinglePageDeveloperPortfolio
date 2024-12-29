@@ -30,12 +30,23 @@ export const Projects: FC = () => {
 							className={styles["project__image"]}
 							src={designPortfolioProjectImage}
 							alt="Design Portfolio project"
+							placeholder="blur"
+							width={540}
+							height={400}
 						/>
 						<h3 className={styles["project__title"]}>Design Portfolio</h3>
 						<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
 							<li className={styles["tag-list__tag"]}>Html</li>
 							<li className={styles["tag-list__tag"]}>Css</li>
 						</ul>
+						<div className={styles["project__links"]}>
+							<a className={styles["link"]} href="#">
+								View project
+							</a>
+							<a className={styles["link"]} href="#">
+								View code
+							</a>
+						</div>
 					</article>
 				</li>
 				<li className={styles["projects-list__project"]}>
@@ -44,12 +55,23 @@ export const Projects: FC = () => {
 							className={styles["project__image"]}
 							src={eLearningLandingPageProjectImage}
 							alt="E-Learning Landing Page project"
+							placeholder="blur"
+							width={540}
+							height={400}
 						/>
 						<h3 className={styles["project__title"]}>E-Learning Landing Page</h3>
 						<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
 							<li className={styles["tag-list__tag"]}>Html</li>
 							<li className={styles["tag-list__tag"]}>Css</li>
 						</ul>
+						<div className={styles["project__links"]}>
+							<a className={styles["link"]} href="#">
+								View project
+							</a>
+							<a className={styles["link"]} href="#">
+								View code
+							</a>
+						</div>
 					</article>
 				</li>
 				<li className={styles["projects-list__project"]}>
@@ -58,6 +80,9 @@ export const Projects: FC = () => {
 							className={styles["project__image"]}
 							src={todoWebAppProjectImage}
 							alt="Todo web app project"
+							placeholder="blur"
+							width={540}
+							height={400}
 						/>
 						<h3 className={styles["project__title"]}>Todo web app</h3>
 						<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
@@ -65,6 +90,14 @@ export const Projects: FC = () => {
 							<li className={styles["tag-list__tag"]}>Css</li>
 							<li className={styles["tag-list__tag"]}>Javascript</li>
 						</ul>
+						<div className={styles["project__links"]}>
+							<a className={styles["link"]} href="#">
+								View project
+							</a>
+							<a className={styles["link"]} href="#">
+								View code
+							</a>
+						</div>
 					</article>
 				</li>
 				<li className={styles["projects-list__project"]}>
@@ -73,6 +106,9 @@ export const Projects: FC = () => {
 							className={styles["project__image"]}
 							src={entertainmentWebAppProjectImage}
 							alt="Entertainment web app project"
+							placeholder="blur"
+							width={540}
+							height={400}
 						/>
 						<h3 className={styles["project__title"]}>Entertainment web app</h3>
 						<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
@@ -80,6 +116,14 @@ export const Projects: FC = () => {
 							<li className={styles["tag-list__tag"]}>Css</li>
 							<li className={styles["tag-list__tag"]}>Javascript</li>
 						</ul>
+						<div className={styles["project__links"]}>
+							<a className={styles["link"]} href="#">
+								View project
+							</a>
+							<a className={styles["link"]} href="#">
+								View code
+							</a>
+						</div>
 					</article>
 				</li>
 				<li className={styles["projects-list__project"]}>
@@ -88,6 +132,9 @@ export const Projects: FC = () => {
 							className={styles["project__image"]}
 							src={memoryGameProjectImage}
 							alt="Memory game project"
+							placeholder="blur"
+							width={540}
+							height={400}
 						/>
 						<h3 className={styles["project__title"]}>Memory game</h3>
 						<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
@@ -95,6 +142,14 @@ export const Projects: FC = () => {
 							<li className={styles["tag-list__tag"]}>Css</li>
 							<li className={styles["tag-list__tag"]}>Javascript</li>
 						</ul>
+						<div className={styles["project__links"]}>
+							<a className={styles["link"]} href="#">
+								View project
+							</a>
+							<a className={styles["link"]} href="#">
+								View code
+							</a>
+						</div>
 					</article>
 				</li>
 				<li className={styles["projects-list__project"]}>
@@ -103,6 +158,9 @@ export const Projects: FC = () => {
 							className={styles["project__image"]}
 							src={artGalleryShowcaseProjectImage}
 							alt="Art gallery showcase project"
+							placeholder="blur"
+							width={540}
+							height={400}
 						/>
 						<h3 className={styles["project__title"]}>Art gallery showcase</h3>
 						<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
@@ -110,6 +168,14 @@ export const Projects: FC = () => {
 							<li className={styles["tag-list__tag"]}>Css</li>
 							<li className={styles["tag-list__tag"]}>Javascript</li>
 						</ul>
+						<div className={styles["project__links"]}>
+							<a className={styles["link"]} href="#">
+								View project
+							</a>
+							<a className={styles["link"]} href="#">
+								View code
+							</a>
+						</div>
 					</article>
 				</li>
 			</ul>
