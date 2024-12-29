@@ -1,9 +1,9 @@
 import { type FC } from "react";
-
-import styles from "./contact.module.css";
 import Image from "next/image";
 
 import circlesImage from "@public/images/vector/circles.svg";
+
+import styles from "./contact.module.css";
 
 export const Contact: FC = () => {
 	return (
