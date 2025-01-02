@@ -1,6 +1,8 @@
 import { type FC } from "react";
 import Image from "next/image";
 
+import { Button } from "@shared/ui/button/ui";
+
 import circlesImage from "@public/images/vector/circles.svg";
 
 import styles from "./contact.module.css";
@@ -51,9 +53,7 @@ export const Contact: FC = () => {
 						placeholder="Message"
 					/>
 				</div>
-				<button className={styles["button"]} type="submit">
-					Send message
-				</button>
+				<Button type="submit">Send message</Button>
 			</form>
 			<Image
 				className={styles["section-contact__circles-image"]}
