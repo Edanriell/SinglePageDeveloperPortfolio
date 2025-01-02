@@ -7,7 +7,7 @@ import styles from "./contact.module.css";
 
 export const Contact: FC = () => {
 	return (
-		<section className={styles["section-contact"]}>
+		<section id="contact-me" className={styles["section-contact"]}>
 			<div className={styles["section-contact__content"]}>
 				<h2 className={styles["section-contact__title"]}>Contact</h2>
 				<p className={styles["section-contact__text"]}>
