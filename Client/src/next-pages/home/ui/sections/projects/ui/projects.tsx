@@ -1,5 +1,7 @@
 import { type FC } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
+
+import { Link } from "@shared/ui/link/ui";
 
 import designPortfolioProjectImage from "@public/images/raster/projects/design-portfolio.jpg";
 import eLearningLandingPageProjectImage from "@public/images/raster/projects/e-learning-landing-page.jpg";
@@ -10,174 +12,115 @@ import artGalleryShowcaseProjectImage from "@public/images/raster/projects/art-g
 
 import styles from "./projects.module.css";
 
+type Project = {
+	name: string;
+	image: StaticImageData;
+	tags: Array<string>;
+	links: {
+		project: string;
+		code: string;
+	};
+};
+
+const projectsList: Array<Project> = [
+	{
+		name: "Design Portfolio",
+		image: designPortfolioProjectImage,
+		tags: ["Html", "Css"],
+		links: {
+			project: "#",
+			code: "#"
+		}
+	},
+	{
+		name: "E-Learning Landing Page",
+		image: eLearningLandingPageProjectImage,
+		tags: ["Html", "Css"],
+		links: {
+			project: "#",
+			code: "#"
+		}
+	},
+	{
+		name: "Todo web app",
+		image: todoWebAppProjectImage,
+		tags: ["Html", "Css", "JavaScript"],
+		links: {
+			project: "#",
+			code: "#"
+		}
+	},
+	{
+		name: "Entertainment web app",
+		image: entertainmentWebAppProjectImage,
+		tags: ["Html", "Css", "JavaScript"],
+		links: {
+			project: "#",
+			code: "#"
+		}
+	},
+	{
+		name: "Memory game",
+		image: memoryGameProjectImage,
+		tags: ["Html", "Css", "JavaScript"],
+		links: {
+			project: "#",
+			code: "#"
+		}
+	},
+	{
+		name: "Art gallery showcase",
+		image: artGalleryShowcaseProjectImage,
+		tags: ["Html", "Css", "JavaScript"],
+		links: {
+			project: "#",
+			code: "#"
+		}
+	}
+];
+
 export const Projects: FC = () => {
 	return (
 		<section className={styles["section-projects"]}>
 			<header className={styles["section-projects__header"]}>
 				<h2 className={styles["section-projects__title"]}>Projects</h2>
-				<a className={styles["link"]} href="#">
-					Contact me
-				</a>
+				<Link href="#contact-me">Contact me</Link>
 			</header>
 			<ul
 				className={
 					styles["section-projects__projects-list"] + " " + styles["projects-list"]
 				}
 			>
-				<li className={styles["projects-list__project"]}>
-					<article className={styles["project"]}>
-						<Image
-							className={styles["project__image"]}
-							src={designPortfolioProjectImage}
-							alt="Design Portfolio project"
-							placeholder="blur"
-							width={540}
-							height={400}
-						/>
-						<h3 className={styles["project__title"]}>Design Portfolio</h3>
-						<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
-							<li className={styles["tag-list__tag"]}>Html</li>
-							<li className={styles["tag-list__tag"]}>Css</li>
-						</ul>
-						<div className={styles["project__links"]}>
-							<a className={styles["link"]} href="#">
-								View project
-							</a>
-							<a className={styles["link"]} href="#">
-								View code
-							</a>
-						</div>
-					</article>
-				</li>
-				<li className={styles["projects-list__project"]}>
-					<article className={styles["project"]}>
-						<Image
-							className={styles["project__image"]}
-							src={eLearningLandingPageProjectImage}
-							alt="E-Learning Landing Page project"
-							placeholder="blur"
-							width={540}
-							height={400}
-						/>
-						<h3 className={styles["project__title"]}>E-Learning Landing Page</h3>
-						<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
-							<li className={styles["tag-list__tag"]}>Html</li>
-							<li className={styles["tag-list__tag"]}>Css</li>
-						</ul>
-						<div className={styles["project__links"]}>
-							<a className={styles["link"]} href="#">
-								View project
-							</a>
-							<a className={styles["link"]} href="#">
-								View code
-							</a>
-						</div>
-					</article>
-				</li>
-				<li className={styles["projects-list__project"]}>
-					<article className={styles["project"]}>
-						<Image
-							className={styles["project__image"]}
-							src={todoWebAppProjectImage}
-							alt="Todo web app project"
-							placeholder="blur"
-							width={540}
-							height={400}
-						/>
-						<h3 className={styles["project__title"]}>Todo web app</h3>
-						<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
-							<li className={styles["tag-list__tag"]}>Html</li>
-							<li className={styles["tag-list__tag"]}>Css</li>
-							<li className={styles["tag-list__tag"]}>Javascript</li>
-						</ul>
-						<div className={styles["project__links"]}>
-							<a className={styles["link"]} href="#">
-								View project
-							</a>
-							<a className={styles["link"]} href="#">
-								View code
-							</a>
-						</div>
-					</article>
-				</li>
-				<li className={styles["projects-list__project"]}>
-					<article className={styles["project"]}>
-						<Image
-							className={styles["project__image"]}
-							src={entertainmentWebAppProjectImage}
-							alt="Entertainment web app project"
-							placeholder="blur"
-							width={540}
-							height={400}
-						/>
-						<h3 className={styles["project__title"]}>Entertainment web app</h3>
-						<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
-							<li className={styles["tag-list__tag"]}>Html</li>
-							<li className={styles["tag-list__tag"]}>Css</li>
-							<li className={styles["tag-list__tag"]}>Javascript</li>
-						</ul>
-						<div className={styles["project__links"]}>
-							<a className={styles["link"]} href="#">
-								View project
-							</a>
-							<a className={styles["link"]} href="#">
-								View code
-							</a>
-						</div>
-					</article>
-				</li>
-				<li className={styles["projects-list__project"]}>
-					<article className={styles["project"]}>
-						<Image
-							className={styles["project__image"]}
-							src={memoryGameProjectImage}
-							alt="Memory game project"
-							placeholder="blur"
-							width={540}
-							height={400}
-						/>
-						<h3 className={styles["project__title"]}>Memory game</h3>
-						<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
-							<li className={styles["tag-list__tag"]}>Html</li>
-							<li className={styles["tag-list__tag"]}>Css</li>
-							<li className={styles["tag-list__tag"]}>Javascript</li>
-						</ul>
-						<div className={styles["project__links"]}>
-							<a className={styles["link"]} href="#">
-								View project
-							</a>
-							<a className={styles["link"]} href="#">
-								View code
-							</a>
-						</div>
-					</article>
-				</li>
-				<li className={styles["projects-list__project"]}>
-					<article className={styles["project"]}>
-						<Image
-							className={styles["project__image"]}
-							src={artGalleryShowcaseProjectImage}
-							alt="Art gallery showcase project"
-							placeholder="blur"
-							width={540}
-							height={400}
-						/>
-						<h3 className={styles["project__title"]}>Art gallery showcase</h3>
-						<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
-							<li className={styles["tag-list__tag"]}>Html</li>
-							<li className={styles["tag-list__tag"]}>Css</li>
-							<li className={styles["tag-list__tag"]}>Javascript</li>
-						</ul>
-						<div className={styles["project__links"]}>
-							<a className={styles["link"]} href="#">
-								View project
-							</a>
-							<a className={styles["link"]} href="#">
-								View code
-							</a>
-						</div>
-					</article>
-				</li>
+				{projectsList.map(({ name, image, tags, links }, index) => (
+					<li key={index} className={styles["projects-list__project"]}>
+						<article className={styles["project"]}>
+							<Image
+								className={styles["project__image"]}
+								src={image}
+								alt={`${name} project`}
+								placeholder="blur"
+								width={540}
+								height={400}
+							/>
+							<h3 className={styles["project__title"]}>{name}</h3>
+							<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
+								{tags.map((tag, index) => (
+									<li key={index} className={styles["tag-list__tag"]}>
+										{tag}
+									</li>
+								))}
+							</ul>
+							<div className={styles["project__links"]}>
+								<Link href={links.project} target="_blank">
+									View project
+								</Link>
+								<Link href={links.code} target="_blank">
+									View code
+								</Link>
+							</div>
+						</article>
+					</li>
+				))}
 			</ul>
 		</section>
 	);

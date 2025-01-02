@@ -1,6 +1,8 @@
 import { type FC } from "react";
 import Image from "next/image";
 
+import { Link } from "@shared/ui/link/ui";
+
 import developerImage from "@public/images/raster/adam-keyes.png";
 import circleImage from "@public/images/vector/circle.svg";
 import circlesImage from "@public/images/vector/circles.svg";
@@ -23,9 +25,7 @@ export const Hero: FC = () => {
 					Based in the UK, I’m a front-end developer passionate about building accessible
 					web apps that users love.
 				</p>
-				<a className={styles["link"]} href="#">
-					Contact me
-				</a>
+				<Link href="#contact-me">Contact me</Link>
 			</div>
 			<figure
 				className={
