@@ -1,7 +1,7 @@
 import { type FC } from "react";
 import Image from "next/image";
 
-import { Button } from "@shared/ui/button/ui";
+import { ContactForm } from "@features/contact-form/ui";
 
 import circlesImage from "@public/images/vector/circles.svg";
 
@@ -17,44 +17,7 @@ export const Contact: FC = () => {
 					form, and I’ll get back to you as soon as possible.
 				</p>
 			</div>
-			<form className={styles["section-contact__form"] + " " + styles["form"]}>
-				<div className={styles["input-field"]}>
-					<label className="visually-hidden" htmlFor="name">
-						Full name
-					</label>
-					<input
-						className={styles["input"] + " " + styles["input--type--text"]}
-						name="name"
-						type="text"
-						placeholder="Name"
-						id="name"
-					/>
-				</div>
-				<div className={styles["input-field"]}>
-					<label className="visually-hidden" htmlFor="email">
-						Email address
-					</label>
-					<input
-						className={styles["input"] + " " + styles["input--type--email"]}
-						name="email"
-						type="email"
-						placeholder="Email"
-						id="email"
-					/>
-				</div>
-				<div className={styles["input-field"]}>
-					<label className="visually-hidden" htmlFor="message">
-						Message
-					</label>
-					<textarea
-						id="message"
-						name="message"
-						className={styles["textarea"]}
-						placeholder="Message"
-					/>
-				</div>
-				<Button type="submit">Send message</Button>
-			</form>
+			<ContactForm className={styles["section-contact__contact-form"]} />
 			<Image
 				className={styles["section-contact__circles-image"]}
 				src={circlesImage}
