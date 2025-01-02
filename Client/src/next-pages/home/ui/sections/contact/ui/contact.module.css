@@ -88,7 +88,8 @@
 
 	@media (width >= 1440px) {
 		bottom: 47rem;
-		left: -205rem;
+		left: unset;
+		right: 1115rem;
 	}
 }
 

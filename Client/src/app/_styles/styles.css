@@ -22,6 +22,10 @@ body {
 	text-rendering: geometricPrecision;
 	min-width: 359rem;
 	background-color: var(--black);
+
+	@media (width >= 1440px) {
+		overflow-x: hidden;
+	}
 }
 
 .visually-hidden {

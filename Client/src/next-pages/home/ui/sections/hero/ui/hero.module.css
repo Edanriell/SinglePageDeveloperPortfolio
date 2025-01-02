@@ -20,8 +20,11 @@
 	@media (width >= 1440px) {
 		--header-height: -110rem;
 
+		max-width: 1440px;
+		margin: var(--header-height) auto 0 auto;
 		padding: 0 165rem 219rem 165rem;
 		align-items: flex-start;
+		overflow: visible;
 	}
 }
 
@@ -41,7 +44,7 @@
 
 	@media (width >= 1440px) {
 		row-gap: unset;
-		max-width: 49.0277vw;
+		max-width: 706rem;
 		align-items: flex-start;
 		margin-top: 198rem;
 		z-index: 4;
