@@ -9,8 +9,9 @@
 	}
 
 	@media (width >= 1440px) {
-		margin-bottom: 139rem;
+		margin: 0 auto 139rem auto;
 		padding: 0 165rem;
+		max-width: 1440rem;
 	}
 }
 

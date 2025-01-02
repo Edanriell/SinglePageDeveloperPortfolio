@@ -9,6 +9,9 @@
 
 	@media (width >= 1440px) {
 		padding: 0 165rem 70rem 165rem;
+		max-width: 1440px;
+		margin: 0 auto;
+		overflow: visible;
 	}
 }
 
@@ -43,7 +46,7 @@
 
 	@media (width >= 1440px) {
 		top: 253rem;
-		right: -239rem;
+		left: 1149rem;
 	}
 }
 
