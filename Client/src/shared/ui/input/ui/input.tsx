@@ -29,21 +29,21 @@ export const Input: FC<InputProps> = ({
 	touched
 }) => {
 	const textInputClasses = clsx(`${styles["input"]} ${styles["input--type--text"]}`, {
-		"input__type--idle": true,
-		"input__type--valid": false,
-		"input__type--invalid": false
+		"input__type--idle": error === undefined && value === "",
+		"input__type--valid": error === undefined && value.length >= 1,
+		"input__type--invalid": error !== undefined && error?.length >= 1
 	});
 
 	const emailInputClasses = clsx(`${styles["input"]} ${styles["input--type--email"]}`, {
-		"input__type--idle": true,
-		"input__type--valid": false,
-		"input__type--invalid": false
+		"input__type--idle": error === undefined && value === "",
+		"input__type--valid": error === undefined && value.length >= 1,
+		"input__type--invalid": error !== undefined && error?.length >= 1
 	});
 
 	const textareaInputClasses = clsx(`${styles["textarea"]}`, {
-		"textarea__type--idle": true,
-		"textarea__type--valid": false,
-		"textarea__type--invalid": false
+		"textarea__type--idle": error === undefined && value === "",
+		"textarea__type--valid": error === undefined && value.length >= 1,
+		"textarea__type--invalid": error !== undefined && error?.length >= 1
 	});
 
 	const inputTypes = new Map<string, () => ReactElement>([
