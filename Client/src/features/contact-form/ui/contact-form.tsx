@@ -3,6 +3,7 @@
 import { type FC } from "react";
 import { Formik } from "formik";
 
+import { Input } from "@shared/ui/input/ui";
 import { Button } from "@shared/ui/button/ui";
 
 import { initialContactFormValues } from "../model";
@@ -38,65 +39,39 @@ export const ContactForm: FC<ContactFormProps> = ({ className }) => {
 				isSubmitting
 			}) => (
 				<form onSubmit={handleSubmit} className={className + " " + styles["contact-form"]}>
-					<div className={styles["input-field"]}>
-						<label className="visually-hidden" htmlFor="name">
-							Full name
-						</label>
-						<input
-							className={styles["input"] + " " + styles["input--type--text"]}
-							name="name"
-							type="text"
-							placeholder="Name"
-							id="name"
-							onChange={handleChange}
-							onBlur={handleBlur}
-							value={values.name}
-						/>
-						{errors.name && touched.name && (
-							<p className={styles["input__validation-error-message"]}>
-								{errors.name}
-							</p>
-						)}
-					</div>
-					<div className={styles["input-field"]}>
-						<label className="visually-hidden" htmlFor="email">
-							Email address
-						</label>
-						<input
-							className={styles["input"] + " " + styles["input--type--email"]}
-							name="email"
-							type="email"
-							placeholder="Email"
-							id="email"
-							onChange={handleChange}
-							onBlur={handleBlur}
-							value={values.email}
-						/>
-						{errors.email && touched.email && (
-							<p className={styles["input__validation-error-message"]}>
-								{errors.email}
-							</p>
-						)}
-					</div>
-					<div className={styles["input-field"]}>
-						<label className="visually-hidden" htmlFor="message">
-							Message
-						</label>
-						<textarea
-							id="message"
-							name="message"
-							className={styles["textarea"]}
-							placeholder="Message"
-							onChange={handleChange}
-							onBlur={handleBlur}
-							value={values.message}
-						/>
-						{errors.message && touched.message && (
-							<p className={styles["input__validation-error-message"]}>
-								{errors.message}
-							</p>
-						)}
-					</div>
+					<Input
+						type="text"
+						placeholder="Name"
+						name="name"
+						id="name"
+						onChange={handleChange}
+						onBlur={handleBlur}
+						value={values.name}
+						touched={!!touched.name}
+						error={errors.name}
+					/>
+					<Input
+						type="email"
+						placeholder="Email"
+						name="email"
+						id="email"
+						onChange={handleChange}
+						onBlur={handleBlur}
+						value={values.email}
+						touched={!!touched.email}
+						error={errors.email}
+					/>
+					<Input
+						type="textarea"
+						placeholder="Message"
+						name="message"
+						id="message"
+						onChange={handleChange}
+						onBlur={handleBlur}
+						value={values.message}
+						touched={!!touched.message}
+						error={errors.message}
+					/>
 					<Button type="submit" disabled={isSubmitting}>
 						Send message
 					</Button>
