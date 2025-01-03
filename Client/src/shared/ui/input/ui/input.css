@@ -1,0 +1,23 @@
+.input__type--idle {
+	border-bottom: 1rem solid var(--white);
+}
+
+.input__type--valid {
+	border-bottom: 1rem solid var(--green);
+}
+
+.input__type--invalid {
+	border-bottom: 1rem solid #ff6f5b;
+}
+
+.textarea__type--idle {
+	border-bottom: 1rem solid var(--white);
+}
+
+.textarea__type--valid {
+	border-bottom: 1rem solid var(--green);
+}
+
+.textarea__type--invalid {
+	border-bottom: 1rem solid #ff6f5b;
+}

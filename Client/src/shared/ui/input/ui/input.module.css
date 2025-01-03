@@ -1,0 +1,63 @@
+.input-field {
+	position: relative;
+}
+
+.input {
+	font-weight: 500;
+	font-size: 16rem;
+	line-height: 162%;
+	letter-spacing: -0.01em;
+	color: var(--white);
+	text-transform: uppercase;
+	padding: 0 24rem 16rem 24rem;
+	width: 100%;
+
+	&::placeholder {
+		font-weight: 500;
+		font-size: 16rem;
+		line-height: 162%;
+		letter-spacing: -0.01em;
+		color: rgba(255, 255, 255, 0.5);
+		text-transform: uppercase;
+	}
+}
+
+.input--type--text {
+	position: relative;
+}
+
+.input--type--email {
+	position: relative;
+}
+
+.input__validation-error-message {
+	font-weight: 500;
+	font-size: 12rem;
+	line-height: 133%;
+	letter-spacing: -0.01em;
+	color: #ff6f5b;
+	position: absolute;
+	bottom: -17rem;
+	right: 0;
+}
+
+.textarea {
+	font-weight: 500;
+	font-size: 16rem;
+	line-height: 162%;
+	letter-spacing: -0.01em;
+	color: var(--white);
+	text-transform: uppercase;
+	resize: none;
+	padding: 0 24rem 81rem 24rem;
+	width: 100%;
+
+	&::placeholder {
+		font-weight: 500;
+		font-size: 16rem;
+		line-height: 162%;
+		letter-spacing: -0.01em;
+		color: rgba(255, 255, 255, 0.5);
+		text-transform: uppercase;
+	}
+}
