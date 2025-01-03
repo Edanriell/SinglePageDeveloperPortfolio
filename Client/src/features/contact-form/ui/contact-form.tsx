@@ -52,7 +52,11 @@ export const ContactForm: FC<ContactFormProps> = ({ className }) => {
 							onBlur={handleBlur}
 							value={values.name}
 						/>
-						{errors.name && touched.name && errors.name}
+						{errors.name && touched.name && (
+							<p className={styles["input__validation-error-message"]}>
+								{errors.name}
+							</p>
+						)}
 					</div>
 					<div className={styles["input-field"]}>
 						<label className="visually-hidden" htmlFor="email">
@@ -68,7 +72,11 @@ export const ContactForm: FC<ContactFormProps> = ({ className }) => {
 							onBlur={handleBlur}
 							value={values.email}
 						/>
-						{errors.email && touched.email && errors.email}
+						{errors.email && touched.email && (
+							<p className={styles["input__validation-error-message"]}>
+								{errors.email}
+							</p>
+						)}
 					</div>
 					<div className={styles["input-field"]}>
 						<label className="visually-hidden" htmlFor="message">
@@ -83,7 +91,11 @@ export const ContactForm: FC<ContactFormProps> = ({ className }) => {
 							onBlur={handleBlur}
 							value={values.message}
 						/>
-						{errors.message && touched.message && errors.message}
+						{errors.message && touched.message && (
+							<p className={styles["input__validation-error-message"]}>
+								{errors.message}
+							</p>
+						)}
 					</div>
 					<Button type="submit" disabled={isSubmitting}>
 						Send message

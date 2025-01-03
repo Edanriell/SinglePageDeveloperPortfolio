@@ -37,6 +37,17 @@
 	position: relative;
 }
 
+.input__validation-error-message {
+	font-weight: 500;
+	font-size: 12rem;
+	line-height: 133%;
+	letter-spacing: -0.01em;
+	color: #ff6f5b;
+	position: absolute;
+	bottom: -17rem;
+	right: 0;
+}
+
 .textarea {
 	font-weight: 500;
 	font-size: 16rem;
