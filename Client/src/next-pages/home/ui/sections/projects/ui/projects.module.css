@@ -119,18 +119,3 @@
 	position: relative;
 	margin-top: 7rem;
 }
-
-.tag-list {
-	display: flex;
-	flex-direction: row;
-	column-gap: 18rem;
-	align-items: center;
-	text-transform: uppercase;
-}
-
-.tag-list__tag {
-	font-weight: 500;
-	font-size: 18rem;
-	line-height: 156%;
-	color: var(--grey);
-}
