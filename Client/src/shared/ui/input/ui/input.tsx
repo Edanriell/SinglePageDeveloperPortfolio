@@ -1,8 +1,9 @@
 import { type ChangeEvent, type FC, type FocusEvent, type ReactElement } from "react";
 import { clsx } from "clsx";
 
-import styles from "./input.module.css";
+import { Icon } from "@shared/ui/icon/ui";
 
+import styles from "./input.module.css";
 import "./input.css";
 
 type InputProps = {
@@ -46,7 +47,7 @@ export const Input: FC<InputProps> = ({
 		"textarea__type--invalid": error && touched
 	});
 
-	const inputTypes = new Map<string, () => ReactElement>([
+	const inputVariants = new Map<string, () => ReactElement>([
 		[
 			"text",
 			() => (
@@ -93,14 +94,25 @@ export const Input: FC<InputProps> = ({
 		]
 	]);
 
+	const input = inputVariants.get(type);
+
+	if (!input) {
+		throw new Error(`Input of type "${type}" is not defined.`);
+	}
+
 	return (
 		<div className={styles["input-field"]}>
 			<label className="visually-hidden" htmlFor={id}>
 				{placeholder}
 			</label>
-			{inputTypes.get(type)!()}
+			{input()}
 			{error && touched && (
 				<p className={styles["input__validation-error-message"]}>{error}</p>
+			)}
+			{error && touched && (
+				<div className={styles["input__validation-error-icon-wrapper"]}>
+					<Icon type="exclamationMark" />
+				</div>
 			)}
 		</div>
 	);
