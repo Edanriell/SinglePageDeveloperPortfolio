@@ -1,8 +1,9 @@
 import { type FC } from "react";
-import Image, { type StaticImageData } from "next/image";
+
+import { type Project } from "@entities/project/model";
+import { ProjectCard } from "@entities/project/ui/project-card/ui";
 
 import { Link } from "@shared/ui/link/ui";
-import { Tags } from "@shared/ui/tags/ui";
 
 import designPortfolioProjectImage from "@public/images/raster/projects/design-portfolio.jpg";
 import eLearningLandingPageProjectImage from "@public/images/raster/projects/e-learning-landing-page.jpg";
@@ -12,16 +13,6 @@ import memoryGameProjectImage from "@public/images/raster/projects/memory-game.j
 import artGalleryShowcaseProjectImage from "@public/images/raster/projects/art-gallery-showcase.jpg";
 
 import styles from "./projects.module.css";
-
-type Project = {
-	name: string;
-	image: StaticImageData;
-	tags: Array<string>;
-	links: {
-		project: string;
-		code: string;
-	};
-};
 
 const projectsList: Array<Project> = [
 	{
@@ -94,26 +85,7 @@ export const Projects: FC = () => {
 			>
 				{projectsList.map(({ name, image, tags, links }, index) => (
 					<li key={index} className={styles["projects-list__project"]}>
-						<article className={styles["project"]}>
-							<Image
-								className={styles["project__image"]}
-								src={image}
-								alt={`${name} project`}
-								placeholder="blur"
-								width={540}
-								height={400}
-							/>
-							<h3 className={styles["project__title"]}>{name}</h3>
-							<Tags tags={tags} className={styles["project__tag-list"]} />
-							<div className={styles["project__links"]}>
-								<Link href={links.project} target="_blank">
-									View project
-								</Link>
-								<Link href={links.code} target="_blank">
-									View code
-								</Link>
-							</div>
-						</article>
+						<ProjectCard name={name} image={image} tags={tags} links={links} />
 					</li>
 				))}
 			</ul>
