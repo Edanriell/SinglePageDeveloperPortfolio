@@ -2,6 +2,7 @@ import { type FC } from "react";
 import Image, { type StaticImageData } from "next/image";
 
 import { Link } from "@shared/ui/link/ui";
+import { Tags } from "@shared/ui/tags/ui";
 
 import designPortfolioProjectImage from "@public/images/raster/projects/design-portfolio.jpg";
 import eLearningLandingPageProjectImage from "@public/images/raster/projects/e-learning-landing-page.jpg";
@@ -103,13 +104,7 @@ export const Projects: FC = () => {
 								height={400}
 							/>
 							<h3 className={styles["project__title"]}>{name}</h3>
-							<ul className={styles["project__tag-list"] + " " + styles["tag-list"]}>
-								{tags.map((tag, index) => (
-									<li key={index} className={styles["tag-list__tag"]}>
-										{tag}
-									</li>
-								))}
-							</ul>
+							<Tags tags={tags} className={styles["project__tag-list"]} />
 							<div className={styles["project__links"]}>
 								<Link href={links.project} target="_blank">
 									View project

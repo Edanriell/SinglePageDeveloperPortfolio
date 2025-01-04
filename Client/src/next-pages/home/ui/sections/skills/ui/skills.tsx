@@ -5,6 +5,39 @@ import circlesImage from "@public/images/vector/circles.svg";
 
 import styles from "./skills.module.css";
 
+const skillsList = [
+	{
+		name: "Html",
+		experience: "4 Years Experience",
+		style: "uppercased"
+	},
+	{
+		name: "Css",
+		experience: "4 Years Experience",
+		style: "uppercased"
+	},
+	{
+		name: "Javascript",
+		experience: "4 Years Experience",
+		style: "normal"
+	},
+	{
+		name: "Accessibility",
+		experience: "4 Years Experience",
+		style: "normal"
+	},
+	{
+		name: "React",
+		experience: "3 Years Experience",
+		style: "normal"
+	},
+	{
+		name: "Sass",
+		experience: "3 Years Experience",
+		style: "normal"
+	}
+];
+
 export const Skills: FC = () => {
 	return (
 		<section className={styles["skills-section"]}>
@@ -17,60 +50,26 @@ export const Skills: FC = () => {
 						styles["skills-and-experience-list"]
 					}
 				>
-					<div className={styles["skills-and-experience-list__item"]}>
-						<dt
-							className={
-								styles["skills-and-experience-list__skill"] +
-								" " +
-								styles["skills-and-experience-list__skill--style--uppercased"]
-							}
-						>
-							Html
-						</dt>
-						<dd className={styles["skills-and-experience-list__experience"]}>
-							4 Years Experience
-						</dd>
-					</div>
-					<div className={styles["skills-and-experience-list__item"]}>
-						<dt
-							className={
-								styles["skills-and-experience-list__skill"] +
-								" " +
-								styles["skills-and-experience-list__skill--style--uppercased"]
-							}
-						>
-							Css
-						</dt>
-						<dd className={styles["skills-and-experience-list__experience"]}>
-							4 Years Experience
-						</dd>
-					</div>
-					<div className={styles["skills-and-experience-list__item"]}>
-						<dt className={styles["skills-and-experience-list__skill"]}>Javascript</dt>
-						<dd className={styles["skills-and-experience-list__experience"]}>
-							4 Years Experience
-						</dd>
-					</div>
-					<div className={styles["skills-and-experience-list__item"]}>
-						<dt className={styles["skills-and-experience-list__skill"]}>
-							Accessibility
-						</dt>
-						<dd className={styles["skills-and-experience-list__experience"]}>
-							4 Years Experience
-						</dd>
-					</div>
-					<div className={styles["skills-and-experience-list__item"]}>
-						<dt className={styles["skills-and-experience-list__skill"]}>React</dt>
-						<dd className={styles["skills-and-experience-list__experience"]}>
-							3 Years Experience
-						</dd>
-					</div>
-					<div className={styles["skills-and-experience-list__item"]}>
-						<dt className={styles["skills-and-experience-list__skill"]}>Sass</dt>
-						<dd className={styles["skills-and-experience-list__experience"]}>
-							3 Years Experience
-						</dd>
-					</div>
+					{skillsList.map(({ name, experience, style }, index) => (
+						<div key={index} className={styles["skills-and-experience-list__item"]}>
+							<dt
+								className={
+									styles["skills-and-experience-list__skill"] +
+									" " +
+									(style === "uppercased"
+										? styles[
+												"skills-and-experience-list__skill--style--uppercased"
+											]
+										: "")
+								}
+							>
+								{name}
+							</dt>
+							<dd className={styles["skills-and-experience-list__experience"]}>
+								{experience}
+							</dd>
+						</div>
+					))}
 				</dl>
 			</div>
 			<Image

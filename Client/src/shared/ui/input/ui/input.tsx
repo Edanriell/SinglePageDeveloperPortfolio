@@ -29,21 +29,21 @@ export const Input: FC<InputProps> = ({
 	touched
 }) => {
 	const textInputClasses = clsx(`${styles["input"]} ${styles["input--type--text"]}`, {
-		"input__type--idle": error === undefined && value === "",
-		"input__type--valid": error === undefined && value.length >= 1,
-		"input__type--invalid": error !== undefined && error?.length >= 1
+		"input__type--idle": !value && !touched,
+		"input__type--valid": !error && value && touched,
+		"input__type--invalid": error && touched
 	});
 
 	const emailInputClasses = clsx(`${styles["input"]} ${styles["input--type--email"]}`, {
-		"input__type--idle": error === undefined && value === "",
-		"input__type--valid": error === undefined && value.length >= 1,
-		"input__type--invalid": error !== undefined && error?.length >= 1
+		"input__type--idle": !value && !touched,
+		"input__type--valid": !error && value && touched,
+		"input__type--invalid": error && touched
 	});
 
 	const textareaInputClasses = clsx(`${styles["textarea"]}`, {
-		"textarea__type--idle": error === undefined && value === "",
-		"textarea__type--valid": error === undefined && value.length >= 1,
-		"textarea__type--invalid": error !== undefined && error?.length >= 1
+		"textarea__type--idle": !value && !touched,
+		"textarea__type--valid": !error && value && touched,
+		"textarea__type--invalid": error && touched
 	});
 
 	const inputTypes = new Map<string, () => ReactElement>([
