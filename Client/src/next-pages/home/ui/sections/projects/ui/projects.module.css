@@ -85,7 +85,7 @@
 	object-fit: cover;
 
 	@media (width >= 768px) {
-		width: clamp(331rem, 42vw, 342rem);
+		width: clamp(328rem, 42vw, 342rem);
 	}
 
 	@media (width >= 1440px) {

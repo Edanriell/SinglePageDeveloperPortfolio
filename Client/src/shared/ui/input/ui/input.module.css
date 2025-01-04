@@ -41,6 +41,12 @@
 	right: 0;
 }
 
+.input__validation-error-icon-wrapper {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
 .textarea {
 	font-weight: 500;
 	font-size: 16rem;
