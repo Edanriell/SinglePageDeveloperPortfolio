@@ -1,11 +1,14 @@
 import { type FC } from "react";
 import Image from "next/image";
 
+import { type TSkill } from "@entities/skill/model";
+import { Skill } from "@entities/skill/ui";
+
 import circlesImage from "@public/images/vector/circles.svg";
 
 import styles from "./skills.module.css";
 
-const skillsList = [
+const skillsList: Array<TSkill> = [
 	{
 		name: "Html",
 		experience: "4 Years Experience",
@@ -19,22 +22,22 @@ const skillsList = [
 	{
 		name: "Javascript",
 		experience: "4 Years Experience",
-		style: "normal"
+		style: "lowercased"
 	},
 	{
 		name: "Accessibility",
 		experience: "4 Years Experience",
-		style: "normal"
+		style: "lowercased"
 	},
 	{
 		name: "React",
 		experience: "3 Years Experience",
-		style: "normal"
+		style: "lowercased"
 	},
 	{
 		name: "Sass",
 		experience: "3 Years Experience",
-		style: "normal"
+		style: "lowercased"
 	}
 ];
 
@@ -51,24 +54,7 @@ export const Skills: FC = () => {
 					}
 				>
 					{skillsList.map(({ name, experience, style }, index) => (
-						<div key={index} className={styles["skills-and-experience-list__item"]}>
-							<dt
-								className={
-									styles["skills-and-experience-list__skill"] +
-									" " +
-									(style === "uppercased"
-										? styles[
-												"skills-and-experience-list__skill--style--uppercased"
-											]
-										: "")
-								}
-							>
-								{name}
-							</dt>
-							<dd className={styles["skills-and-experience-list__experience"]}>
-								{experience}
-							</dd>
-						</div>
+						<Skill key={index} name={name} experience={experience} style={style} />
 					))}
 				</dl>
 			</div>
