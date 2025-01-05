@@ -1,12 +1,7 @@
-
 .link {
+	--link-height: 25.92rem;
+
 	position: relative;
-	font-weight: 700;
-	font-size: 16rem;
-	line-height: 162%;
-	letter-spacing: 0.14em;
-	color: var(--white);
-	text-transform: uppercase;
 	display: flex;
 	flex-direction: column-reverse;
 	row-gap: 10rem;
@@ -18,4 +13,28 @@
 		height: 2rem;
 		background: var(--green);
 	}
+}
+
+.link__content-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	height: var(--link-height);
+	overflow: hidden;
+}
+
+.link__text {
+	font-weight: 700;
+	font-size: 16rem;
+	line-height: 162%;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.link__text--color--white {
+	color: var(--white);
+}
+
+.link__text--color--green {
+	color: var(--green);
 }
