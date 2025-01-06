@@ -31,6 +31,8 @@
 }
 
 .input__validation-error-message {
+	--validation-error-message-height: 15.96rem;
+
 	font-weight: 500;
 	font-size: 12rem;
 	line-height: 133%;
@@ -42,6 +44,9 @@
 }
 
 .input__validation-error-icon-wrapper {
+	--validation-error-icon-wrapper-width: 24rem;
+	--validation-error-icon-wrapper-height: 24rem;
+
 	position: absolute;
 	right: 0;
 	top: 0;

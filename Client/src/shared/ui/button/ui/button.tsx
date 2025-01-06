@@ -23,7 +23,7 @@ const buttonAnimationVariants: Variants = {
 	},
 	active: {
 		y: "calc(-1 * var(--button-height))",
-		filter: "blur(5rem)"
+		filter: "blur(calc(var(--button-height) / 8))"
 	},
 	inactive: {
 		y: 0,
@@ -34,7 +34,7 @@ const buttonAnimationVariants: Variants = {
 const shadowButtonAnimationVariants: Variants = {
 	initial: {
 		y: 0,
-		filter: "blur(5rem)"
+		filter: "blur(calc(var(--button-height) / 8))"
 	},
 	active: {
 		y: "calc(-1 * var(--button-height))",
@@ -42,7 +42,7 @@ const shadowButtonAnimationVariants: Variants = {
 	},
 	inactive: {
 		y: 0,
-		filter: "blur(5rem)"
+		filter: "blur(calc(var(--button-height) / 8))"
 	}
 };
 
