@@ -1,5 +1,8 @@
+"use client";
+
 import { type ChangeEvent, type FC, type FocusEvent, type ReactElement } from "react";
 import { clsx } from "clsx";
+import { AnimatePresence, motion } from "motion/react";
 
 import { Icon } from "@shared/ui/icon/ui";
 
@@ -106,14 +109,46 @@ export const Input: FC<InputProps> = ({
 				{placeholder}
 			</label>
 			{input()}
-			{error && touched && (
-				<p className={styles["input__validation-error-message"]}>{error}</p>
-			)}
-			{error && touched && (
-				<div className={styles["input__validation-error-icon-wrapper"]}>
-					<Icon type="exclamationMark" />
-				</div>
-			)}
+			<AnimatePresence>
+				{error && touched && (
+					<motion.p
+						initial={{
+							opacity: 0,
+							x: -15,
+							filter: "blur(calc(var(--validation-error-message-height) / 5))"
+						}}
+						animate={{ opacity: 1, x: 0, filter: "blur(0rem)" }}
+						exit={{
+							opacity: 0,
+							x: -15,
+							filter: "blur(calc(var(--validation-error-message-height) / 5))"
+						}}
+						className={styles["input__validation-error-message"]}
+					>
+						{error}
+					</motion.p>
+				)}
+			</AnimatePresence>
+			<AnimatePresence>
+				{error && touched && (
+					<motion.div
+						initial={{
+							opacity: 0,
+							scale: 0.75,
+							filter: "blur(calc((var(--validation-error-icon-wrapper-width) + var(--validation-error-icon-wrapper-height)) / 16))"
+						}}
+						animate={{ opacity: 1, scale: 1, filter: "blur(0rem)" }}
+						exit={{
+							opacity: 0,
+							scale: 0.75,
+							filter: "blur(calc((var(--validation-error-icon-wrapper-width) + var(--validation-error-icon-wrapper-height)) / 16))"
+						}}
+						className={styles["input__validation-error-icon-wrapper"]}
+					>
+						<Icon type="exclamationMark" />
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</div>
 	);
 };
