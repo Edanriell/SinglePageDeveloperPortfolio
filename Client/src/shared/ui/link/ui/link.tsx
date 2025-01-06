@@ -24,7 +24,7 @@ const linkAnimationVariants: Variants = {
 	},
 	active: {
 		y: "calc(-1 * var(--link-height))",
-		filter: "blur(5rem)"
+		filter: "blur(calc(var(--link-height) / 8))"
 	},
 	inactive: {
 		y: 0,
@@ -35,7 +35,7 @@ const linkAnimationVariants: Variants = {
 const shadowLinkAnimationVariants: Variants = {
 	initial: {
 		y: 0,
-		filter: "blur(5rem)"
+		filter: "blur(calc(var(--link-height) / 8))"
 	},
 	active: {
 		y: "calc(-1 * var(--link-height))",
@@ -43,7 +43,7 @@ const shadowLinkAnimationVariants: Variants = {
 	},
 	inactive: {
 		y: 0,
-		filter: "blur(5rem)"
+		filter: "blur(calc(var(--link-height) / 8))"
 	}
 };
 
