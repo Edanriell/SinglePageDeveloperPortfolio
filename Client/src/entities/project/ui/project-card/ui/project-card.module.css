@@ -2,6 +2,14 @@
 	position: relative;
 }
 
+.project__primary-content {
+	position: relative;
+}
+
+.project__secondary-content {
+	position: relative;
+}
+
 .project__image {
 	width: 343rem;
 	height: 253rem;
@@ -34,7 +42,17 @@
 	column-gap: 30rem;
 
 	@media (width >= 1440px) {
-		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.75);
+		margin-top: unset;
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+		justify-content: center;
+		column-gap: unset;
+		row-gap: 48rem;
 	}
 }
 
