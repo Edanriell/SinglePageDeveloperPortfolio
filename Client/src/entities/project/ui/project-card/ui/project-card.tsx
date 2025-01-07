@@ -72,10 +72,10 @@ export const ProjectCard: FC<ProjectCardProps> = ({ name, image, tags, links }) 
 	return (
 		<article className={styles["project"]}>
 			<div
-				onMouseEnter={() => setProjectCardState("hovered")}
-				onMouseLeave={() => setProjectCardState("unHovered")}
-				onTouchStart={() => setProjectCardState("touched")}
-				onTouchEnd={() => setProjectCardState("unTouched")}
+				onMouseEnter={width >= 1440 ? () => setProjectCardState("hovered") : undefined}
+				onMouseLeave={width >= 1440 ? () => setProjectCardState("unHovered") : undefined}
+				onTouchStart={width >= 1440 ? () => setProjectCardState("touched") : undefined}
+				onTouchEnd={width >= 1440 ? () => setProjectCardState("unTouched") : undefined}
 				className={styles["project__secondary-content"]}
 			>
 				<Image
