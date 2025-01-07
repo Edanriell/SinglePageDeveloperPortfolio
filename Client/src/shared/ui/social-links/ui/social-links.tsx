@@ -1,6 +1,7 @@
 "use client";
 
 import { type FC } from "react";
+import { motion } from "motion/react";
 
 import { Icon, type IconType } from "@shared/ui/icon/ui/icon";
 
@@ -35,16 +36,38 @@ const socialLinks: Array<SocialLinks> = [
 	}
 ];
 
+const socialLinksListItemAnimationVariants = {
+	hovered: { scale: 1.25 },
+	tapped: { scale: 0.95 }
+};
+
+const socialLinksListLinkAnimationVariants = {
+	hovered: { color: "#4ee1a0" },
+	tapped: { color: "#4ee1a0" }
+};
+
 export const SocialLinks: FC = () => {
 	return (
 		<ul className={styles["social-links-list"]}>
 			{socialLinks.map(({ href, description, iconType }, index) => (
-				<li key={index} className={styles["social-links-list__item"]}>
-					<a href={href} className={styles["social-links-list__link"]}>
+				<motion.li
+					variants={socialLinksListItemAnimationVariants}
+					whileHover="hovered"
+					whileTap="tapped"
+					key={index}
+					className={styles["social-links-list__item"]}
+				>
+					<motion.a
+						variants={socialLinksListLinkAnimationVariants}
+						whileHover="hovered"
+						whileTap="tapped"
+						href={href}
+						className={styles["social-links-list__link"]}
+					>
 						<span className="visually-hidden">{description}</span>
 						<Icon type={iconType} />
-					</a>
-				</li>
+					</motion.a>
+				</motion.li>
 			))}
 		</ul>
 	);
