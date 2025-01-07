@@ -1,7 +1,7 @@
 "use client";
 
 import { type ComponentPropsWithoutRef, type FC, type ReactNode, useState } from "react";
-import { motion, Variants } from "motion/react";
+import { motion, type Variants } from "motion/react";
 
 import styles from "./button.module.css";
 
