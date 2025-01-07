@@ -1,3 +1,5 @@
+"use client";
+
 import { type FC } from "react";
 
 import { Icon, type IconType } from "@shared/ui/icon/ui/icon";

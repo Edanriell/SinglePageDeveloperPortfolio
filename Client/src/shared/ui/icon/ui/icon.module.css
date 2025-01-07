@@ -1,5 +1,6 @@
 .icon {
 	position: relative;
+	color: inherit;
 }
 
 .icon--type--github {
