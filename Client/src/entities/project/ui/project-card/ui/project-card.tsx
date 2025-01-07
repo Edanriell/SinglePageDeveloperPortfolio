@@ -6,6 +6,7 @@ import { motion, type Variants } from "motion/react";
 
 import { Tags } from "@shared/ui/tags/ui";
 import { Link } from "@shared/ui/link/ui";
+import { useWindowSize } from "@shared/lib/hooks";
 
 import { type Project } from "../../../model";
 
@@ -62,6 +63,8 @@ const codeLinkAnimationVariants: Variants = {
 };
 
 export const ProjectCard: FC<ProjectCardProps> = ({ name, image, tags, links }) => {
+	const { width } = useWindowSize();
+
 	const [projectCardState, setProjectCardState] = useState<
 		"idle" | "hovered" | "unHovered" | "touched" | "unTouched"
 	>("idle");
@@ -83,64 +86,66 @@ export const ProjectCard: FC<ProjectCardProps> = ({ name, image, tags, links }) 
 					width={540}
 					height={400}
 				/>
-				<motion.div
-					animate={
-						projectCardState === "hovered" || projectCardState === "touched"
-							? "active"
-							: projectCardState === "unHovered" || projectCardState === "unTouched"
-								? "inactive"
-								: "initial"
-					}
-					variants={projectCardAnimationVariants}
-					className={styles["project__links"]}
-				>
+				{width >= 1440 && (
 					<motion.div
-						variants={projectLinkAnimationVariants}
 						animate={
 							projectCardState === "hovered" || projectCardState === "touched"
-								? "visible"
+								? "active"
 								: projectCardState === "unHovered" ||
 									  projectCardState === "unTouched"
-									? "hidden"
+									? "inactive"
 									: "initial"
 						}
+						variants={projectCardAnimationVariants}
+						className={styles["project__links"]}
 					>
-						<Link href={links.project} target="_blank">
-							View project
-						</Link>
+						<motion.div
+							variants={projectLinkAnimationVariants}
+							animate={
+								projectCardState === "hovered" || projectCardState === "touched"
+									? "visible"
+									: projectCardState === "unHovered" ||
+										  projectCardState === "unTouched"
+										? "hidden"
+										: "initial"
+							}
+						>
+							<Link href={links.project} target="_blank">
+								View project
+							</Link>
+						</motion.div>
+						<motion.div
+							variants={codeLinkAnimationVariants}
+							animate={
+								projectCardState === "hovered" || projectCardState === "touched"
+									? "visible"
+									: projectCardState === "unHovered" ||
+										  projectCardState === "unTouched"
+										? "hidden"
+										: "initial"
+							}
+						>
+							<Link href={links.code} target="_blank">
+								View code
+							</Link>
+						</motion.div>
 					</motion.div>
-					<motion.div
-						variants={codeLinkAnimationVariants}
-						animate={
-							projectCardState === "hovered" || projectCardState === "touched"
-								? "visible"
-								: projectCardState === "unHovered" ||
-									  projectCardState === "unTouched"
-									? "hidden"
-									: "initial"
-						}
-					>
-						<Link href={links.code} target="_blank">
-							View code
-						</Link>
-					</motion.div>
-				</motion.div>
+				)}
 			</div>
 			<div className={styles["project__primary-content"]}>
 				<h3 className={styles["project__title"]}>{name}</h3>
 				<Tags tags={tags} className={styles["project__tag-list"]} />
-				<div className={styles["project__links"]}>
-					<Link href={links.project} target="_blank">
-						View project
-					</Link>
-					<Link href={links.code} target="_blank">
-						View code
-					</Link>
-				</div>
+				{width < 1440 && (
+					<div className={styles["project__links"]}>
+						<Link href={links.project} target="_blank">
+							View project
+						</Link>
+						<Link href={links.code} target="_blank">
+							View code
+						</Link>
+					</div>
+				)}
 			</div>
 		</article>
 	);
 };
-
-// CUSTOM HOOK FOR WIDTH DETERMINATION
-// CONDITIONALLUY RENDER LINKS BASED ON WIDTH
