@@ -1,4 +1,4 @@
-package org.example.server.domain.entity;
+package org.example.server.domain.contact;
 
 import jakarta.persistence.*;
 
@@ -19,7 +19,7 @@ public class Contact {
 
 	@Column(nullable = false, length = 1000)
 	private String message;
-	 
+
 	@Column(name = "created_at")
 	private LocalDateTime createdAt;
 

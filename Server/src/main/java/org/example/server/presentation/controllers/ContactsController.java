@@ -1,8 +1,8 @@
-package org.example.server.presentation.controller;
+package org.example.server.presentation.controllers;
 
 import jakarta.validation.Valid;
-import org.example.server.application.dto.ContactDTO;
-import org.example.server.application.service.ContactService;
+import org.example.server.application.dtos.ContactDTO;
+import org.example.server.application.services.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,11 +12,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/contacts")
-public class ContactController {
+public class ContactsController {
 	private final ContactService contactService;
 
 	@Autowired
-	public ContactController(ContactService contactService) {
+	public ContactsController(ContactService contactService) {
 		this.contactService = contactService;
 	}
 
@@ -37,11 +37,10 @@ public class ContactController {
 		ContactDTO contact = contactService.getContactById(id);
 		return ResponseEntity.ok(contact);
 	}
-  
+
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deleteContact(@PathVariable Long id) {
 		contactService.deleteContact(id);
 		return ResponseEntity.noContent().build();
 	}
-
 }
