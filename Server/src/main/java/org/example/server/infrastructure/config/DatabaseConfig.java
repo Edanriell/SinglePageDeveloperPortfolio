@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@EntityScan("org.example.server.domain.entity")
-@EnableJpaRepositories("org.example.server.infrastructure.persistence")
+@EntityScan("org.example.server.domain")
+@EnableJpaRepositories("org.example.server.domain")
 public class DatabaseConfig {
 }
