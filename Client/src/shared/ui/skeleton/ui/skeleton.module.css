@@ -1,0 +1,91 @@
+
+.skeleton {
+	display: block;
+	background-color: #e5e7eb;
+	background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+	background-size: 200% 100%;
+	background-repeat: no-repeat;
+	border-radius: 4px;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+	.skeleton {
+		background-color: #374151;
+		background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+	}
+}
+
+/* Variants */
+.skeleton--text {
+	border-radius: 4px;
+	height: 1em;
+	margin-bottom: 0.5em;
+}
+
+.skeleton--rectangular {
+	border-radius: 4px;
+}
+
+.skeleton--rounded {
+	border-radius: 8px;
+}
+
+.skeleton--circular {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+}
+
+/* Animations */
+.skeleton--pulse {
+	animation: skeleton-pulse 2s ease-in-out infinite;
+}
+
+.skeleton--wave {
+	animation: skeleton-wave 2s linear infinite;
+}
+
+.skeleton--none {
+	animation: none;
+}
+
+/* Keyframes */
+@keyframes skeleton-pulse {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.4;
+	}
+}
+
+@keyframes skeleton-wave {
+	0% {
+		background-position: -200% 0;
+	}
+	100% {
+		background-position: 200% 0;
+	}
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.skeleton--text {
+		height: 0.9em;
+	}
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+	.skeleton--pulse,
+	.skeleton--wave {
+		animation: none;
+	}
+
+	.skeleton {
+		background-image: none;
+	}
+}
