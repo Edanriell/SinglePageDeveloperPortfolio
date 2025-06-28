@@ -4,6 +4,13 @@
 	row-gap: 32rem;
 }
 
+.contact-form__button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
 .input-field {
 	position: relative;
 }
@@ -67,5 +74,46 @@
 		letter-spacing: -0.01em;
 		color: rgba(255, 255, 255, 0.5);
 		text-transform: uppercase;
+	}
+}
+
+/* Spinner Styles */
+.spinner {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 8px;
+}
+
+.spinner-svg {
+	animation: spin 1s linear infinite;
+	color: currentColor;
+}
+
+.spinner-circle {
+	animation: spinner-dash 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spinner-dash {
+	0% {
+		stroke-dasharray: 1, 150;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -35;
+	}
+	100% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -124;
 	}
 }
