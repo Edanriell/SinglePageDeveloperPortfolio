@@ -5,6 +5,7 @@ import { Formik } from "formik";
 
 import { Input } from "@shared/ui/input/ui";
 import { Button } from "@shared/ui/button/ui";
+import { Spinner } from "@shared/ui/spinner/ui";
 
 import type { CreateContactDto } from "@entities/contact/model";
 import { ContactApi } from "@entities/contact/api";
@@ -18,31 +19,6 @@ import { ApiError } from "@shared/api";
 type ContactFormProps = {
 	className?: string;
 };
-
-const Spinner: FC = () => (
-	<div className={styles.spinner}>
-		<svg
-			className={styles["spinner-svg"]}
-			width="20"
-			height="20"
-			viewBox="0 0 24 24"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<circle
-				className={styles["spinner-circle"]}
-				cx="12"
-				cy="12"
-				r="10"
-				stroke="currentColor"
-				strokeWidth="2"
-				strokeLinecap="round"
-				strokeDasharray="31.416"
-				strokeDashoffset="31.416"
-			/>
-		</svg>
-	</div>
-);
 
 export const ContactForm: FC<ContactFormProps> = ({ className }) => {
 	const [submitStatus, setSubmitStatus] = useState<{
