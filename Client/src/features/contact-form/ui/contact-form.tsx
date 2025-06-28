@@ -15,9 +15,24 @@ import { validateContactForm } from "../lib";
 
 import styles from "./contact-form.module.css";
 import { ApiError } from "@shared/api";
+import { AnimatePresence, motion } from "motion/react";
 
 type ContactFormProps = {
 	className?: string;
+};
+
+const submitMessageAnimationVariants = {
+	initial: {
+		opacity: 0,
+		x: -15,
+		filter: "blur(calc(var(--message-height) / 5))"
+	},
+	displayed: { opacity: 1, x: 0, filter: "blur(0rem)" },
+	hidden: {
+		opacity: 0,
+		x: -15,
+		filter: "blur(calc(var(--message-height) / 5))"
+	}
 };
 
 export const ContactForm: FC<ContactFormProps> = ({ className }) => {
@@ -44,10 +59,6 @@ export const ContactForm: FC<ContactFormProps> = ({ className }) => {
 			});
 
 			resetForm();
-
-			setTimeout(() => {
-				setSubmitStatus({ type: "idle", message: null });
-			}, 5000);
 		} catch (error) {
 			let errorMessage = "Failed to send message. Please try again.";
 
@@ -60,6 +71,10 @@ export const ContactForm: FC<ContactFormProps> = ({ className }) => {
 				message: errorMessage
 			});
 		} finally {
+			setTimeout(() => {
+				setSubmitStatus({ type: "idle", message: null });
+			}, 5000);
+
 			setSubmitting(false);
 		}
 	};
@@ -113,6 +128,32 @@ export const ContactForm: FC<ContactFormProps> = ({ className }) => {
 						touched={!!touched.message}
 						error={errors.message}
 					/>
+					<AnimatePresence>
+						{submitStatus.type === "success" && submitStatus.message && (
+							<motion.p
+								variants={submitMessageAnimationVariants}
+								initial={"initial"}
+								animate={"displayed"}
+								exit={"hidden"}
+								className={styles["contact-form__success-message"]}
+							>
+								{submitStatus.message}
+							</motion.p>
+						)}
+					</AnimatePresence>
+					<AnimatePresence>
+						{submitStatus.type === "error" && submitStatus.message && (
+							<motion.p
+								variants={submitMessageAnimationVariants}
+								initial={"initial"}
+								animate={"displayed"}
+								exit={"hidden"}
+								className={styles["contact-form__error-message"]}
+							>
+								{submitStatus.message}
+							</motion.p>
+						)}
+					</AnimatePresence>
 					<Button type="submit" disabled={isSubmitting}>
 						{isSubmitting ? (
 							<div className={styles["contact-form__button"]}>

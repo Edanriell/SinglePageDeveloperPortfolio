@@ -4,6 +4,26 @@
 	row-gap: 32rem;
 }
 
+.contact-form__success-message {
+	--message-height: 25.92rem;
+
+	font-weight: 500;
+	font-size: 16rem;
+	line-height: 162%;
+	letter-spacing: -0.01em;
+	color: #4ce19e;
+}
+
+.contact-form__error-message {
+	--message-height: 25.92rem;
+
+	font-weight: 500;
+	font-size: 16rem;
+	line-height: 162%;
+	letter-spacing: -0.01em;
+	color: #ff6f5b;
+}
+
 .contact-form__button {
 	display: flex;
 	flex-direction: row;
