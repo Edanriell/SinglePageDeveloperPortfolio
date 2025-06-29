@@ -8,11 +8,11 @@ import { Tags } from "@shared/ui/tags/ui";
 import { Link } from "@shared/ui/link/ui";
 import { useWindowSize } from "@shared/lib/hooks";
 
-import { type Project } from "../../../model";
+import { type GetAllProjectsResponse } from "../../../model";
 
 import styles from "./project-card.module.css";
 
-type ProjectCardProps = Project;
+type ProjectCardProps = GetAllProjectsResponse;
 
 const projectCardAnimationVariants: Variants = {
 	initial: {
@@ -85,6 +85,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ name, image, tags, links }) 
 					placeholder="blur"
 					width={540}
 					height={400}
+					blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/..."
 				/>
 				{width >= 1440 && (
 					<motion.div
@@ -110,7 +111,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ name, image, tags, links }) 
 										: "initial"
 							}
 						>
-							<Link href={links.project} target="_blank">
+							<Link href={links.projectUrl} target="_blank">
 								View project
 							</Link>
 						</motion.div>
@@ -125,7 +126,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ name, image, tags, links }) 
 										: "initial"
 							}
 						>
-							<Link href={links.code} target="_blank">
+							<Link href={links.codeUrl} target="_blank">
 								View code
 							</Link>
 						</motion.div>
@@ -137,10 +138,10 @@ export const ProjectCard: FC<ProjectCardProps> = ({ name, image, tags, links }) 
 				<Tags tags={tags} className={styles["project__tag-list"]} />
 				{width < 1440 && (
 					<div className={styles["project__links"]}>
-						<Link href={links.project} target="_blank">
+						<Link href={links.projectUrl} target="_blank">
 							View project
 						</Link>
-						<Link href={links.code} target="_blank">
+						<Link href={links.codeUrl} target="_blank">
 							View code
 						</Link>
 					</div>

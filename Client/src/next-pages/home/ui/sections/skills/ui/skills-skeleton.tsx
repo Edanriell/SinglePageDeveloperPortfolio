@@ -1,18 +1,17 @@
 import { type FC } from "react";
 import Image from "next/image";
 
-import { Skill } from "@entities/skill/ui";
-
 import circlesImage from "@public/images/vector/circles.svg";
 
 import styles from "./skills.module.css";
-import { GetAllSkillsResponse } from "@entities/skill/model";
+
+import { Skeleton } from "@shared/ui/skeleton/ui";
 
 type SkillsProps = {
-	data: Array<GetAllSkillsResponse>;
+	skillsLoading: number;
 };
 
-export const Skills: FC<SkillsProps> = ({ data }) => {
+export const SkillsSkeleton: FC<SkillsProps> = ({ skillsLoading }) => {
 	return (
 		<section className={styles["skills-section"]}>
 			<h2 className="visually-hidden">Skills & Experience</h2>
@@ -24,8 +23,15 @@ export const Skills: FC<SkillsProps> = ({ data }) => {
 						styles["skills-and-experience-list"]
 					}
 				>
-					{data.map(({ name, experience }, index) => (
-						<Skill key={index} name={name} experience={experience} />
+					{Array.from({ length: skillsLoading }, (_, index) => (
+						<div key={index} className={styles["skills-and-experience-list__item"]}>
+							<dt className={styles["skills-and-experience-list__skill"]}>
+								<Skeleton width={279} height={56} />
+							</dt>
+							<dd className={styles["skills-and-experience-list__experience"]}>
+								<Skeleton width={164} height={28} />
+							</dd>
+						</div>
 					))}
 				</dl>
 			</div>

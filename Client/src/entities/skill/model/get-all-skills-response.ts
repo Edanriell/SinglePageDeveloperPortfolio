@@ -1,5 +1,4 @@
-export type Skill = {
-	id: number;
+export type GetAllSkillsResponse = {
 	name: string;
 	experience: number;
 };
