@@ -1,17 +1,15 @@
 import { type FC } from "react";
 
-import { GetAllProjectsResponse } from "@entities/project/model";
-import { ProjectCard } from "@entities/project/ui/project-card/ui";
-
 import { Link } from "@shared/ui/link/ui";
 
 import styles from "./projects.module.css";
+import { Skeleton } from "@shared/ui/skeleton/ui";
 
-type ProjectsProps = {
-	data: Array<GetAllProjectsResponse>;
+type ProjectsSkeletonProps = {
+	projectsLoading: 6;
 };
 
-export const Projects: FC<ProjectsProps> = ({ data }) => {
+export const ProjectsSkeleton: FC<ProjectsSkeletonProps> = ({ projectsLoading }) => {
 	return (
 		<section className={styles["section-projects"]}>
 			<header className={styles["section-projects__header"]}>
@@ -23,9 +21,9 @@ export const Projects: FC<ProjectsProps> = ({ data }) => {
 					styles["section-projects__projects-list"] + " " + styles["projects-list"]
 				}
 			>
-				{data.map(({ name, image, tags, links }, index) => (
+				{Array.from({ length: projectsLoading }, (_, index) => (
 					<li key={index} className={styles["projects-list__project"]}>
-						<ProjectCard name={name} image={image} tags={tags} links={links} />
+						<Skeleton className={styles["project__image"]} width={540} height={400} />
 					</li>
 				))}
 			</ul>

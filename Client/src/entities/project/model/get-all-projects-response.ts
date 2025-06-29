@@ -1,5 +1,4 @@
-export type Project = {
-	id: number;
+export type GetAllProjectsResponse = {
 	name: string;
 	image: string;
 	tags: Array<string>;
