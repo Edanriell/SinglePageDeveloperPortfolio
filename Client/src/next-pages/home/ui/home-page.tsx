@@ -1,12 +1,11 @@
 import { type FC, type ReactElement } from "react";
-
-import { Hero } from "./sections/hero/ui";
 import { Skills } from "./sections/skills/ui";
 import { Projects } from "./sections/projects/ui";
 import { Contact } from "./sections/contact/ui";
+import { HeroContainer } from "@pages/home/ui/sections/hero/ui/hero-container";
 
 const homePageSections = new Set<ReactElement>([
-	<Hero key="hero-section" />,
+	<HeroContainer key="hero-section" />,
 	<Skills key="skills-section" />,
 	<Projects key="projects-section" />,
 	<Contact key="contact-section" />
