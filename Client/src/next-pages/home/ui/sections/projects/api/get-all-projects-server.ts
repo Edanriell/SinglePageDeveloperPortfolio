@@ -10,12 +10,12 @@ export async function getAllProjectsServer(): Promise<Array<GetAllProjectsRespon
 		});
 
 		if (!response.ok) {
-			throw new Error(`Failed to fetch skills: ${response.status}`);
+			throw new Error(`Failed to fetch projects: ${response.status}`);
 		}
 
 		return await response.json();
 	} catch (error) {
-		console.error("Error fetching skills:", error);
+		console.error("Error fetching projects:", error);
 
 		// Fallback data in case of error
 		return [
