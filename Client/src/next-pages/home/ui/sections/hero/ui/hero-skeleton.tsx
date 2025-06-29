@@ -1,20 +1,14 @@
-"use client";
-
-import { type FC } from "react";
 import Image from "next/image";
-import { Link } from "@shared/ui/link/ui";
-import { GetBannerByIdResponse } from "@entities/banner/model";
 
 import circleImage from "@public/images/vector/circle.svg";
 import circlesImage from "@public/images/vector/circles.svg";
 
 import styles from "./hero.module.css";
 
-type HeroProps = {
-	data: GetBannerByIdResponse;
-};
+import { Link } from "@shared/ui/link/ui";
+import { Skeleton } from "@shared/ui/skeleton/ui";
 
-export const Hero: FC<HeroProps> = ({ data }) => {
+export function HeroSkeleton() {
 	return (
 		<section className={styles["hero-section"]}>
 			<div className={styles["hero-section__content"]}>
@@ -26,7 +20,8 @@ export const Hero: FC<HeroProps> = ({ data }) => {
 					</strong>
 					.
 				</h1>
-				<p className={styles["hero-section__text"]}>{data.description}</p>
+				<Skeleton style={{ marginBottom: "16rem" }} width={481} height={28} />
+				<Skeleton style={{ marginBottom: "30rem" }} width={451} height={28} />
 				<Link href="#contact-me">Contact me</Link>
 			</div>
 			<figure
@@ -34,17 +29,9 @@ export const Hero: FC<HeroProps> = ({ data }) => {
 					styles["hero-section__developer-image"] + " " + styles["developer-image"]
 				}
 			>
-				<Image
-					className={styles["developer-image__image"]}
-					src={data.image}
-					alt={data.title}
-					width={445}
-					height={720}
-					placeholder="blur"
-					blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/..."
-				/>
+				<Skeleton className={styles["developer-image__image"]} width={445} height={720} />
 				<figcaption className={styles["developer-image__image-description"]}>
-					{data.title}
+					Loading
 				</figcaption>
 			</figure>
 			<Image
@@ -63,4 +50,4 @@ export const Hero: FC<HeroProps> = ({ data }) => {
 			/>
 		</section>
 	);
-};
+}
